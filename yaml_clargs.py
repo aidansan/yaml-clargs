@@ -21,7 +21,7 @@ class YamlClargs:
     def __repr__(self):
         return self.__str__()
 
-def yaml_clargs(parser=None, print_config=True):
+def yaml_clargs(parser=None, print_config=True, encoding='utf-8'):
     if parser is None:
         parser = argparse.ArgumentParser()
     parser.add_argument('--config_file', type=str, required=False, default='config_files/default.yaml', help='filename of config file')
@@ -37,7 +37,7 @@ def yaml_clargs(parser=None, print_config=True):
         config = YamlClargs()
 
     # Load in config file hyperparameters
-    with open(args.config_file) as f:
+    with open(args.config_file, encoding=encoding) as f:
         for k, v in yaml.safe_load(f).items():
             setattr(config, k, v)
 
