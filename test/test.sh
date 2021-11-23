@@ -1,1 +1,1 @@
-PYTHONPATH=../ python3 test_yaml_clargs.py
+PYTHONPATH=../src python3 test_yaml_clargs.py
