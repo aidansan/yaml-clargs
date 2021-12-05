@@ -36,3 +36,10 @@ assert config3.dropout == .5
 assert config3.beam_size == 4
 assert len(config3.__dict__) == 5 # 4 attributes + pprinter
 
+
+# Use no default config file (only main config file)
+sys.argv =['test_json_clargs.py', '--config_file', 'config_files/config2.yaml']
+config4 = yaml_clargs()
+assert config4.lr == .05
+assert config4.beam_size == 4 
+assert len(config1.__dict__) == 3 # 2 attributes + pprinter

@@ -1,0 +1,2 @@
+lr: 5e-2
+beam_size: 4
